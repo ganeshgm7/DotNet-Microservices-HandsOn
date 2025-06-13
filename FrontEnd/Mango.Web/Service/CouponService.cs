@@ -15,7 +15,7 @@ public class CouponService(IBaseService baseService) : ICouponService
         {
             ApiType = ApiType.POST,
             Data = couponDto,
-            Url = Miscelenous.CouponAPIBaseUrl + "/api/coupon"
+            Url = CouponAPIBaseUrl + "/api/coupon"
         });
     }
 
@@ -24,7 +24,7 @@ public class CouponService(IBaseService baseService) : ICouponService
         return _baseService.SendAsync(new RequestDto()
         {
             ApiType = ApiType.DELETE,
-            Url = Miscelenous.CouponAPIBaseUrl + $"/api/coupon/{couponId}"
+            Url = CouponAPIBaseUrl + $"/api/coupon/{couponId}"
         });
     }
 
@@ -33,7 +33,7 @@ public class CouponService(IBaseService baseService) : ICouponService
         return _baseService.SendAsync(new RequestDto()
         {
             ApiType = ApiType.GET,
-            Url = Miscelenous.CouponAPIBaseUrl + "/api/coupon"
+            Url = CouponAPIBaseUrl + "/api/coupon"
         });
     }
 
@@ -42,7 +42,7 @@ public class CouponService(IBaseService baseService) : ICouponService
         return _baseService.SendAsync(new RequestDto()
         {
             ApiType = ApiType.GET,
-            Url = Miscelenous.CouponAPIBaseUrl + $"/api/coupon/code/{couponCode}"
+            Url = CouponAPIBaseUrl + $"/api/coupon/code/{couponCode}"
         });
     }
 
@@ -51,7 +51,7 @@ public class CouponService(IBaseService baseService) : ICouponService
         return _baseService.SendAsync(new RequestDto()
         {
             ApiType = ApiType.GET,
-            Url = Miscelenous.CouponAPIBaseUrl + $"/api/coupon/{couponId}"
+            Url = CouponAPIBaseUrl + $"/api/coupon/{couponId}"
         });
     }
 
@@ -61,7 +61,7 @@ public class CouponService(IBaseService baseService) : ICouponService
         {
             ApiType = ApiType.PUT,
             Data = couponDto,
-            Url = Miscelenous.CouponAPIBaseUrl + "/api/coupon"
+            Url = CouponAPIBaseUrl + "/api/coupon"
         });
     }
 }
