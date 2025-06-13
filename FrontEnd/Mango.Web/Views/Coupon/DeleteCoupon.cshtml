@@ -1,0 +1,46 @@
+﻿@model CouponDto
+
+<form asp-action="DeleteCoupon" method="post">
+    <input type="hidden" name="couponId" value="@Model.CouponId" />
+
+    <div class="container border p-4">
+        <h1 class="text-white text-center mb-4">Delete Coupon</h1>
+        <hr class="bg-light" />
+
+        <div class="row mb-3">
+            <div class="col-md-3 text-white" style="font-size: 20px;">
+                Coupon Code:
+            </div>
+            <div class="col-md-9 text-white" style="font-size: 18px;">
+                @Model.CouponCode
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3 text-white" style="font-size: 20px;">
+                Discount Amount:
+            </div>
+            <div class="col-md-9 text-white" style="font-size: 18px;">
+                @Model.DiscountAmount.ToString("c")
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-3 text-white" style="font-size: 20px;">
+                Minimum Amount:
+            </div>
+            <div class="col-md-9 text-white" style="font-size: 18px;">
+                @Model.MinAmount.ToString("c")
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <a asp-action="CouponIndex" class="btn btn-secondary w-100">Back to List</a>
+            </div>
+            <div class="col-md-6">
+                <input type="submit" value="Delete" class="btn btn-danger w-100" />
+            </div>
+        </div>
+    </div>
+</form>
