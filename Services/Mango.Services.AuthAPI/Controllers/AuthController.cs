@@ -24,7 +24,7 @@ public class AuthController : ControllerBase
         if (!string.IsNullOrEmpty(resultMessage))
         {
             _responseDto.IsSuccess = false;
-            _responseDto.Result = resultMessage;
+            _responseDto.Message = resultMessage;
             return Ok(_responseDto);
         }
 
@@ -39,7 +39,7 @@ public class AuthController : ControllerBase
         if (loginResponseDto.User == null)
         {
             _responseDto.IsSuccess = false;
-            _responseDto.Result = "Username or password is incorrect";
+            _responseDto.Message = "Username or password is incorrect";
             return BadRequest(_responseDto);
         }
 

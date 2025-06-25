@@ -46,7 +46,7 @@ public class AuthController : Controller
         }
         else
         {
-            ModelState.AddModelError("CustomError", responseDto?.Message ?? "Login failed. Please try again.");
+            TempData["error"] = responseDto?.Message ?? "Login failed. Please try again.";
             return View(loginRequestDto);
         }
     }
@@ -97,6 +97,10 @@ public class AuthController : Controller
                     ];
 
             ViewBag.RoleList = roleList;
+        }
+        else
+        {
+            TempData["error"] = responseDto?.Message ?? "Registration failed. Please try again.";
         }
 
         return View();
