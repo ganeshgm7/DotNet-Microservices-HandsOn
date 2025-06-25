@@ -25,7 +25,7 @@ public class AuthService(IBaseService baseService) : IAuthService
             ApiType = ApiType.POST,
             Data = loginRequestDto,
             Url = AuthAPIBaseUrl + "/api/auth/login"
-        });
+        }, withBearer: false);
     }
 
     public async Task<ResponseDto?> RegisterAsync(RegistrationRequestDto registerRequestDto)
@@ -35,6 +35,6 @@ public class AuthService(IBaseService baseService) : IAuthService
             ApiType = ApiType.POST,
             Data = registerRequestDto,
             Url = AuthAPIBaseUrl + "/api/auth/register"
-        });
+        }, withBearer: false);
     }
 }
